@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/danieljharvey/search-face.git"
   },
-  "bin": [
+  "bin": {
     "google":"./index.js",
     "lycos":"./index.js",
     "askjeeves":"./index.js",
@@ -18,7 +18,7 @@
     "internetlook":"./index.js",
     "findymate": "./index.js",
     "bing":"./index.js"
-  ],
+  },
   "keywords": [
     "search",
     "face"
