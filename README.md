@@ -13,6 +13,12 @@ Use as follows:
 
 `google nice picture of a horse`
 
+Or if you particularly like Duck Duck Go,
+
+`duck internet yeah etc etc`
+
+which will use DDG instead.
+
 Or something like that.
 
 That's about it really.
