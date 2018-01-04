@@ -3,18 +3,16 @@ Fire up a browser and do a quick search from the command line, great.
 
 ### Install
 
-Plop the `searchface` script in your path and then do something like
+`npm install -g searchface`
 
 ### Usage
 
-`searchface "picture of an angry dog"`
+Searchface has many names, including `google`, `lycos`, `askjeeves`, `searchface`, `internetlook`, `findymate` and if you're really desperate `bing`.
 
-or `searchface plops`
+Use as follows:
+
+`google nice picture of a horse`
+
+Or something like that.
 
 That's about it really.
-
-### Disclaimer
-
-It only uses Google Chrome at the moment, in the default location. Fairly easy to change it in the script if you've moved it or something though.
-
-Firefox kind of works but sprays nonsense into the terminal window and I gave up fixing it.
