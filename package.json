@@ -17,7 +17,8 @@
     "searchface":"./index.js",
     "internetlook":"./index.js",
     "findymate": "./index.js",
-    "bing":"./index.js"
+    "bing":"./index.js",
+    "duck":"./duck.js"
   },
   "keywords": [
     "search",
