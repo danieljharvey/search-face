@@ -4,21 +4,21 @@
   "description": "Searches things in front of your face",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danieljharvey/search-face.git"
   },
   "bin": {
-    "google":"./index.js",
-    "lycos":"./index.js",
-    "askjeeves":"./index.js",
-    "searchface":"./index.js",
-    "internetlook":"./index.js",
+    "google": "./index.js",
+    "lycos": "./index.js",
+    "askjeeves": "./index.js",
+    "searchface": "./index.js",
+    "internetlook": "./index.js",
     "findymate": "./index.js",
-    "bing":"./index.js",
-    "duck":"./duck.js"
+    "bing": "./index.js",
+    "duck": "./duck.js"
   },
   "keywords": [
     "search",
