@@ -1,59 +1,36 @@
-#!/bin/bash
+#!/usr/bin/env node
 
-# colour constants
-RED="\033[0;31m"
-GREEN="\033[0;32m"
-YELLOW="\033[0;33m"
-BLUE="\033[0;34m"
-MAGENTA="\033[0;35m"
-CYAN="\033[0;36m"
+const { exec } = require('child_process');
 
-LIGHTRED="\033[0;91m"
+const countArgs = (argv) => {
+    if (argv.length < 2) {
+        return false
+    }
+    return argv
+}
 
-NC="\033[0;39m"
+const argString = (argv) => {
+    return argv.slice(2).join(" ")
+}
 
-SEARCH_TERM="$1"
+const addCommand = (argString) => {
+    return `open https://www.google.com/search?q='${argString}'`
+}
 
-GOOGLE_PATH="https://www.google.com/search?q="
+const maybePipe = (funcs) => (data) => {
+    return funcs.reverse().reduce((value, func) => {
+        if (!value) {
+            return value;
+        }
+        return func(value)
+    }, data)
+}
 
-CHROME_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+const command = maybePipe([addCommand, argString, countArgs])(process.argv)
 
-if [ $# == 0 ]; then
-    echo -e "${YELLOW}** Search Face **${NC}"
-    echo -e "${LIGHTRED}ERROR!${NC} No search term passed!"
-    echo -e "Try something like "
-    echo -e "${CYAN}searchface horse${NC}"
-    echo -e "and you'll have a much nicer time"
-    exit 1
-fi
-
-if [ $# -ne 1 ]; then
-     echo -e "${YELLOW}** Search Face **${NC}"
-    echo -e "${LIGHTRED}ERROR!${NC} Too many search terms passed!${NC}"
-    echo -e "Keep multi-word searches in quotes like "
-    echo -e "${CYAN}searchface 'terrible disaster'${NC}"
-    echo -e "and you'll have a much nicer time"
-    exit 1 
-fi
-
-if [ -f "$CHROME_PATH" ]; then
-   echo -e "${YELLOW}Google Chrome${NC} found!"
-   "$CHROME_PATH" $"$GOOGLE_PATH$1" &   
-   exit 0
-else
-    echo "Google Chrome not found, trying Firefox..."
-fi
-
-echo "Firefox disabled for now because it broke this script, exiting..."
-exit 1
-
-FIREFOX_PATH="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
-if [ -f $FIREFOX_PATH ]; then
-    echo "Firefox found!"
-    "$FIREFOX_PATH" $"$GOOGLE_PATH$1" &
-    exit 0
-else
-    echo "Firefox not found, giving up for now..."
-    exit 1
-fi
-
+if (command) {
+    exec(command)
+} else {
+    console.error(`SEARCHFACE
+    Insufficient params passed, usage 'searchface items etc'`)
+}
