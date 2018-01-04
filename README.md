@@ -7,14 +7,10 @@ Plop the `searchface` script in your path and then do something like
 
 ### Usage
 
-`searchface "picture of an angry dog"`
+`searchface plops`
 
-or `searchface plops`
+or even multi words
 
-That's about it really.
+`searchface picture of an angry dog`
 
-### Disclaimer
-
-It only uses Google Chrome at the moment, in the default location. Fairly easy to change it in the script if you've moved it or something though.
-
-Firefox kind of works but sprays nonsense into the terminal window and I gave up fixing it.
+That's about it really. You'll need Node installed, but hopefully you wouldn't be interested in nonsense like this unless you already do.
